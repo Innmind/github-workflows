@@ -5,7 +5,7 @@ on:
 
 jobs:
   coverage:
-    uses: .github/workflows/coverage.yml
+    uses: ./.github/workflows/coverage.yml
     secrets: inherit
     strategy:
       matrix:

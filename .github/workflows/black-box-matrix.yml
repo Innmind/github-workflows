@@ -10,7 +10,7 @@ on:
 
 jobs:
   blackbox:
-    uses: .github/workflows/black-box.yml
+    uses: ./.github/workflows/black-box.yml
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]

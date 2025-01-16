@@ -2,15 +2,22 @@ name: Coverage
 
 on:
   workflow_call:
+    inputs:
+      os:
+        type: string
+        required: false
+        default: ubuntu-latest
+      php-version:
+        type: string
+        required: true
+      dependency-versions:
+        type: string
+        required: false
+        default: 'highest'
 
 jobs:
   coverage:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest]
-        php-version: ['8.2', '8.3']
-        dependency-versions: ['lowest', 'highest']
+    runs-on: ${{ inputs.os }}
     name: 'Coverage'
     steps:
       - name: Checkout
@@ -18,13 +25,13 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: ${{ inputs.php-version }}
           extensions: mbstring, intl
           coverage: xdebug
       - name: Composer
         uses: "ramsey/composer-install@v3"
         with:
-          dependency-versions: ${{ matrix.dependencies }}
+          dependency-versions: ${{ inputs.dependencies }}
       - name: BlackBox
         run: php blackbox.php
         env:

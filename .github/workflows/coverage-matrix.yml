@@ -1,0 +1,19 @@
+name: Coverage
+
+on:
+  workflow_call:
+
+jobs:
+  coverage:
+    uses: .github/workflows/coverage.yml
+    secrets: inherit
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        php-version: ['8.2', '8.3']
+        dependency-versions: ['lowest', 'highest']
+    name: 'Coverage'
+    with:
+      os: ${{ matrix.os }}
+      php-version: ${{ matrix.php-version }}
+      dependency-versions: ${{ matrix.dependency-versions }}

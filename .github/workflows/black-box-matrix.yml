@@ -1,0 +1,24 @@
+name: BlackBox
+
+on:
+  workflow_call:
+    inputs:
+      scenarii:
+        type: number
+        default: 100
+        required: false
+
+jobs:
+  blackbox:
+    uses: .github/workflows/black-box.yml
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        php-version: ['8.2', '8.3']
+        dependency-versions: ['lowest', 'highest']
+    name: 'BlackBox'
+    with:
+      os: ${{ matrix.os }}
+      php-version: ${{ matrix.php-version }}
+      dependency-versions: ${{ matrix.dependency-versions }}
+      scenarii: ${{ inputs.scenarii }}

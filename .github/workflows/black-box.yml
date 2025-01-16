@@ -21,7 +21,7 @@ on:
 
 jobs:
   blackbox:
-    runs-on: ${{ input.os }}
+    runs-on: ${{ inputs.os }}
     name: 'BlackBox'
     steps:
       - name: Checkout

@@ -18,7 +18,7 @@ on:
 jobs:
   coverage:
     runs-on: ${{ inputs.os }}
-    name: 'Coverage'
+    name: 'Coverage (${{ inputs.os }}, ${{ inputs.php-version }}, ${{ inputs.dependency-versions }})'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

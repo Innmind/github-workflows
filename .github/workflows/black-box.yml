@@ -22,7 +22,7 @@ on:
 jobs:
   blackbox:
     runs-on: ${{ inputs.os }}
-    name: 'BlackBox'
+    name: 'BlackBox (${{ inputs.os }}, ${{ inputs.php-version }}, ${{ inputs.dependency-versions }})'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

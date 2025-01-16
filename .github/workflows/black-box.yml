@@ -2,6 +2,11 @@ name: CI
 
 on:
   workflow_call:
+    inputs:
+      scenarii:
+        type: number
+        default: 100
+        required: false
 
 jobs:
   blackbox:
@@ -27,3 +32,5 @@ jobs:
           dependency-versions: ${{ matrix.dependencies }}
       - name: BlackBox
         run: php blackbox.php
+        env:
+          BLACKBOX_SET_SIZE: ${{ inputs.scenarii }}

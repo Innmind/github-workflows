@@ -4,7 +4,8 @@ on:
   workflow_call:
 
 jobs:
-  runs-on: ${{ matrix.os }}
+  coverage:
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]

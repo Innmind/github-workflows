@@ -18,7 +18,7 @@ on:
         type: string
         required: false
         default: ''
-      groups:
+      tags:
         type: string
         required: false
         default: ''
@@ -42,7 +42,7 @@ jobs:
         with:
           dependency-versions: ${{ inputs.dependencies }}
       - name: BlackBox
-        run: php blackbox.php ${{ inputs.groups }}
+        run: php blackbox.php ${{ inputs.tags }}
         env:
           ENABLE_COVERAGE: 'true'
           BLACKBOX_SET_SIZE: 1

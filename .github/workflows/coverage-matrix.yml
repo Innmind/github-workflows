@@ -7,7 +7,7 @@ on:
         type: string
         required: false
         default: ''
-      groups:
+      tags:
         type: string
         required: false
         default: ''
@@ -27,4 +27,4 @@ jobs:
       php-version: ${{ matrix.php-version }}
       dependency-versions: ${{ matrix.dependency-versions }}
       ini-values: ${{ inputs.ini-values }}
-      groups: ${{ inputs.groups }}
+      tags: ${{ inputs.tags }}

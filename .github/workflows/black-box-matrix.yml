@@ -11,7 +11,7 @@ on:
         type: string
         required: false
         default: ''
-      groups:
+      tags:
         type: string
         required: false
         default: ''
@@ -31,4 +31,4 @@ jobs:
       dependency-versions: ${{ matrix.dependency-versions }}
       scenarii: ${{ inputs.scenarii }}
       ini-values: ${{ inputs.ini-values }}
-      groups: ${{ inputs.groups }}
+      tags: ${{ inputs.tags }}

@@ -18,6 +18,10 @@ on:
         type: string
         required: false
         default: ''
+      groups:
+        type: string
+        required: false
+        default: ''
 
 jobs:
   coverage:
@@ -38,7 +42,7 @@ jobs:
         with:
           dependency-versions: ${{ inputs.dependencies }}
       - name: BlackBox
-        run: php blackbox.php
+        run: php blackbox.php ${{ inputs.groups }}
         env:
           ENABLE_COVERAGE: 'true'
           BLACKBOX_SET_SIZE: 1

@@ -18,6 +18,10 @@ on:
         type: string
         required: false
         default: 'highest'
+      ini-values:
+        type: string
+        required: false
+        default: ''
 
 jobs:
   blackbox:
@@ -32,6 +36,7 @@ jobs:
           php-version: ${{ inputs.php-version }}
           extensions: mbstring, intl
           coverage: none
+          ini-values: ${{ inputs.ini-values }}
       - name: Composer
         uses: "ramsey/composer-install@v3"
         with:

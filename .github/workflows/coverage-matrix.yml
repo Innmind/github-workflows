@@ -2,6 +2,11 @@ name: Coverage
 
 on:
   workflow_call:
+    inputs:
+      ini-values:
+        type: string
+        required: false
+        default: ''
 
 jobs:
   coverage:
@@ -17,3 +22,4 @@ jobs:
       os: ${{ matrix.os }}
       php-version: ${{ matrix.php-version }}
       dependency-versions: ${{ matrix.dependency-versions }}
+      ini-values: ${{ inputs.ini-values }}

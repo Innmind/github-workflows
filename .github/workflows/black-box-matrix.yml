@@ -7,6 +7,10 @@ on:
         type: number
         default: 100
         required: false
+      ini-values:
+        type: string
+        required: false
+        default: ''
 
 jobs:
   blackbox:
@@ -22,3 +26,4 @@ jobs:
       php-version: ${{ matrix.php-version }}
       dependency-versions: ${{ matrix.dependency-versions }}
       scenarii: ${{ inputs.scenarii }}
+      ini-values: ${{ inputs.ini-values }}

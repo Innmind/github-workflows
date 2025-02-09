@@ -26,6 +26,6 @@ jobs:
       - name: Composer
         uses: "ramsey/composer-install@v3"
         with:
-          dependency-versions: ${{ inputs.dependencies }}
+          dependency-versions: ${{ inputs.dependency-versions }}
       - name: Psalm
         run: vendor/bin/psalm --shepherd

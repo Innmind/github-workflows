@@ -40,7 +40,7 @@ jobs:
       - name: Composer
         uses: "ramsey/composer-install@v3"
         with:
-          dependency-versions: ${{ inputs.dependencies }}
+          dependency-versions: ${{ inputs.dependency-versions }}
       - name: BlackBox
         run: php blackbox.php ${{ inputs.tags }}
         env:

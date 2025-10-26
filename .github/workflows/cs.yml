@@ -2,10 +2,6 @@ name: CS
 
 on:
   workflow_call:
-    inputs:
-      php-version:
-        type: string
-        required: true
 
 jobs:
   cs:
@@ -17,7 +13,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ inputs.php-version }}
+          php-version: '8.4'
           extensions: mbstring, intl
       - name: Composer
         uses: "ramsey/composer-install@v3"

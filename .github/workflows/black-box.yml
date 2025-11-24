@@ -45,6 +45,7 @@ jobs:
         uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: ${{ inputs.dependency-versions }}
+          ignore-cache: ${{ inputs.os }} == 'macOS-latest'
       - name: BlackBox
         run: php blackbox.php ${{ inputs.tags }}
         env:

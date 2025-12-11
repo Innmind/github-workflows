@@ -21,11 +21,9 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ inputs.php-version }}
+          php-version: '8.4'
           extensions: mbstring, intl
       - name: Composer
         uses: "ramsey/composer-install@v3"
-        with:
-          dependency-versions: ${{ inputs.dependency-versions }}
       - name: Psalm
-        run: vendor/bin/psalm --shepherd
+        run: vendor/bin/psalm --shepherd --php-version=${{ inputs.php-version }}

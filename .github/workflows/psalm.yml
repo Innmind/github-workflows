@@ -6,10 +6,6 @@ on:
       php-version:
         type: string
         required: true
-      dependency-versions:
-        type: string
-        required: false
-        default: 'highest'
 
 jobs:
   psalm:

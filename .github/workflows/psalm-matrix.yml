@@ -13,4 +13,3 @@ jobs:
     name: 'Psalm'
     with:
       php-version: ${{ matrix.php-version }}
-      dependency-versions: ${{ matrix.dependency-versions }}

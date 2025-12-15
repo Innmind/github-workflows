@@ -21,6 +21,23 @@ jobs:
     uses: innmind/github-workflows/.github/workflows/cs.yml@main
 ```
 
+```yaml
+name: Extensive CI
+
+on:
+  push:
+    tags:
+      - '*'
+    paths:
+      - '.github/workflows/extensive.yml'
+
+jobs:
+  blackbox:
+    uses: innmind/github-workflows/.github/workflows/extensive.yml@main
+    with:
+      scenarii: 1000 # optional
+```
+
 ## Documentation
 
 ```yaml

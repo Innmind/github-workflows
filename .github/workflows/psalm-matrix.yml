@@ -9,9 +9,7 @@ jobs:
     secrets: inherit
     strategy:
       matrix:
-        php-version: ['8.2', '8.3', '8.4']
-        dependency-versions: ['lowest', 'highest']
+        php-version: ['8.4', '8.5']
     name: 'Psalm'
     with:
       php-version: ${{ matrix.php-version }}
-      dependency-versions: ${{ matrix.dependency-versions }}

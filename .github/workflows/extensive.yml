@@ -5,7 +5,7 @@ on:
     inputs:
       scenarii:
         type: number
-        default: 100
+        default: 1000
         required: false
       ini-values:
         type: string
@@ -22,8 +22,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
-        php-version: ['8.4', '8.5']
-        dependency-versions: ['lowest', 'highest']
+        php-version: ['8.5']
+        dependency-versions: ['highest']
     name: 'BlackBox'
     with:
       os: ${{ matrix.os }}

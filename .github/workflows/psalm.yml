@@ -6,6 +6,10 @@ on:
       php-version:
         type: string
         required: true
+      run-php-version:
+        type: string
+        required: false
+        default: '8.4'
 
 jobs:
   psalm:
@@ -17,7 +21,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.4'
+          php-version: ${{ inputs.run-php-version }}
           extensions: mbstring, intl
       - name: Composer
         uses: "ramsey/composer-install@v3"

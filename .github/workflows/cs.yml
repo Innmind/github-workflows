@@ -3,10 +3,10 @@ name: CS
 on:
   workflow_call:
       inputs:
-      php-version:
-        type: string
-        required: false
-        default: '8.4'
+        php-version:
+          type: string
+          required: false
+          default: '8.4'
 
 jobs:
   cs:

@@ -32,3 +32,4 @@ jobs:
       scenarii: ${{ inputs.scenarii }}
       ini-values: ${{ inputs.ini-values }}
       tags: ${{ inputs.tags }}
+      env: 'extensive'

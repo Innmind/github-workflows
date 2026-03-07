@@ -47,6 +47,7 @@ jobs:
         env:
           ENABLE_COVERAGE: 'true'
           BLACKBOX_SET_SIZE: 1
+          BLACKBOX_ENV: 'coverage'
       - uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}

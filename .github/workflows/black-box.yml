@@ -26,6 +26,10 @@ on:
         type: string
         required: false
         default: ''
+      env:
+        type: string
+        required: false
+        default: 'default'
 
 jobs:
   blackbox:
@@ -50,3 +54,4 @@ jobs:
         run: php blackbox.php ${{ inputs.tags }}
         env:
           BLACKBOX_SET_SIZE: ${{ inputs.scenarii }}
+          BLACKBOX_ENV: ${{ inputs.env }}

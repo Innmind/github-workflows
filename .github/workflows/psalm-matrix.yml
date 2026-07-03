@@ -9,7 +9,7 @@ jobs:
     secrets: inherit
     strategy:
       matrix:
-        php-version: ['8.4', '8.5']
-    name: 'Psalm'
+        php-version: ["8.5"]
+    name: "Psalm"
     with:
       php-version: ${{ matrix.php-version }}

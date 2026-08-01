@@ -6,7 +6,7 @@ on:
         php-version:
           type: string
           required: false
-          default: '8.4'
+          default: '8.5'
 
 jobs:
   cs:
